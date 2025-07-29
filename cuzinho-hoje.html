@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuzinho hoje?</title>
+  <style>
+    body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    #nao {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cuzinho hoje?</h1>
+  <div class="buttons">
+    <button onclick="respostaSim()">Sim</button>
+    <button id="nao" onmouseover="moverBotao()">Não</button>
+  </div>
+
+  <script>
+    const botaoNao = document.getElementById("nao");
+
+    function moverBotao() {
+      const largura = window.innerWidth - botaoNao.offsetWidth;
+      const altura = window.innerHeight - botaoNao.offsetHeight;
+
+      const novaEsquerda = Math.random() * largura;
+      const novoTopo = Math.random() * altura;
+
+      botaoNao.style.left = novaEsquerda + "px";
+      botaoNao.style.top = novoTopo + "px";
+    }
+
+    function respostaSim() {
+      alert("Sabia que você queria! 😏");
+    }
+  </script>
+</body>
+</html>
